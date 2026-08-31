@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Informasi & Pendaftaran SPMB</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            primary: '#1e3a8a',
+                            secondary: '#0284c7',
+                            accent: '#f59e0b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0284c7 100%);
+        }
+        .custom-shadow {
+            box-shadow: 0 20px 40px -15px rgba(30, 58, 138, 0.15);
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-brand-secondary selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand Name -->
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-700 to-sky-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+                        <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold text-slate-900 tracking-tight block">SPMB ONLINE</span>
+                        <span class="text-xs text-sky-600 font-semibold tracking-wider uppercase">Penerimaan Murid Baru</span>
+                    </div>
+                </div>
+
+                <!-- Nav Links Desktop -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                    <a href="#syarat" class="hover:text-blue-700 transition">Syarat Masuk</a>
+                    <a href="#cek-usia" class="hover:text-blue-700 transition">Cek Kelayakan Usia</a>
+                    <a href="#tahapan" class="hover:text-blue-700 transition">Alur Seleksi</a>
+                    <a href="#faq" class="hover:text-blue-700 transition">FAQ</a>
+                </nav>
+
+                <!-- CTA Button Header -->
+                <div class="hidden sm:flex items-center">
+                    <a href="https://bit.ly/FormulirSPMBMP3" target="_blank" rel="noopener noreferrer" 
+                       class="px-5 py-2.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2 transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-[#fa-file-signature]"></i>
+                        <span>Formulir Pendaftaran</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-70"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#syarat" class="block py-2 text-slate-700 font-medium">Syarat Masuk</a>
+            <a href="#cek-usia" class="block py-2 text-slate-700 font-medium">Cek Kelayakan Usia</a>
+            <a href="#tahapan" class="block py-2 text-slate-700 font-medium">Alur Seleksi</a>
+            <a href="#faq" class="block py-2 text-slate-700 font-medium">FAQ</a>
+            <a href="https://bit.ly/FormulirSPMBMP3" target="_blank" class="w-full mt-2 py-3 bg-blue-700 text-white text-center font-semibold rounded-xl block">
+                Isi Formulir Pendaftaran <i class="fa-solid fa-external-link ml-1"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative gradient-bg text-white py-20 lg:py-28 overflow-hidden">
+        <!-- Background Pattern Decor -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold tracking-wide text-sky-200">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Pendaftaran Tahun Ajaran Baru Dibuka
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Selamat Datang di Portal <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-300 to-emerald-300">SPMB Interaktif</span>
+                    </h1>
+
+                    <p class="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Sistem Informasi Penerimaan Murid Baru. Cek kelayakan usia calon siswa, pelajari syarat pendaftaran, dan lakukan pengisian formulir secara online dengan mudah.
+                    </p>
+
+                    <!-- Quick Highlights -->
+                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs sm:text-sm font-medium text-slate-200">
+                        <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg border border-white/10">
+                            <i class="fa-solid fa-child-reaching text-emerald-400 text-base"></i>
+                            <span>Min. Usia 6 Thn (per Juli)</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg border border-white/10">
+                            <i class="fa-solid fa-[#fa-clipboard-check] text-sky-400 text-base"></i>
+                            <span>Wawancara & Gali Potensi</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://bit.ly/FormulirSPMBMP3" target="_blank" rel="noopener noreferrer"
+                           class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold rounded-2xl shadow-xl shadow-emerald-900/40 hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3 transform hover:-translate-y-1">
+                            <i class="fa-solid fa-pen-to-square text-lg"></i>
+                            <span>Daftar Sekarang Online</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <a href="#cek-usia" 
+                           class="w-full sm:w-auto px-6 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-2xl border border-white/20 backdrop-blur-md transition text-center">
+                            <i class="fa-solid fa-calculator mr-2"></i>Cek Usia Anak
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Card / Link Preview -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card rounded-3xl p-6 sm:p-8 text-slate-800 shadow-2xl relative border border-white/40">
+                        <div class="flex items-center justify-between border-b border-slate-200/80 pb-4 mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-link"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-slate-900 text-sm">Link Resmi Pendaftaran</h3>
+                                    <p class="text-xs text-slate-500">Bitly Form Resmi SPMB</p>
+                                </div>
+                            </div>
+                            <span class="text-xs bg-emerald-100 text-emerald-800 font-semibold px-2.5 py-1 rounded-full">Aktif</span>
+                        </div>
+
+                        <!-- Link Display Box -->
+                        <div class="bg-slate-100 p-4 rounded-2xl border border-slate-200 mb-6 flex items-center justify-between gap-2">
+                            <span class="font-mono text-sm text-blue-800 font-bold truncate" id="link-text">https://bit.ly/FormulirSPMBMP3</span>
+                            <button onclick="copyFormLink()" id="copy-btn" class="px-3 py-1.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg transition shadow-sm flex items-center gap-1.5 shrink-0">
+                                <i class="fa-regular fa-copy"></i>
+                                <span id="copy-btn-text">Salin</span>
+                            </button>
+                        </div>
+
+                        <!-- Info Checklist Inside Hero Card -->
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start gap-3 text-xs text-slate-600">
+                                <i class="fa-solid fa-circle-check text-emerald-500 text-sm mt-0.5"></i>
+                                <span>Pengisian formulir dapat dilakukan kapan saja dan dari mana saja secara online.</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-xs text-slate-600">
+                                <i class="fa-solid fa-circle-check text-emerald-500 text-sm mt-0.5"></i>
+                                <span>Menyiapkan berkas dan data diri calon murid serta orang tua/wali.</span>
+                            </div>
+                        </div>
+
+                        <a href="https://bit.ly/FormulirSPMBMP3" target="_blank" 
+                           class="w-full py-3.5 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl text-center block transition shadow-md shadow-blue-700/20">
+                            Buka Form Pendaftaran <i class="fa-solid fa-external-link text-xs ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Interactive Age Eligibility Calculator -->
+    <section id="cek-usia" class="py-16 lg:py-24 bg-white relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-sky-600 font-bold text-sm tracking-wider uppercase bg-sky-50 px-3 py-1 rounded-full border border-sky-200">Syarat #1 Interaktif</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Kalkulator Kelayakan Usia</h2>
+                <p class="text-slate-600 mt-2 text-base">
+                    Sesuai ketentuan, calon siswa **minimal berusia 6 tahun per bulan Juli** pada tahun masuk. Gunakan alat di bawah untuk mengecek secara otomatis.
+                </p>
+            </div>
+
+            <!-- Calculator Card -->
+            <div class="bg-gradient-to-br from-slate-50 to-sky-50/50 rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl custom-shadow">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    
+                    <!-- Input Form -->
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">
+                                <i class="fa-regular fa-calendar-days text-blue-600 mr-1.5"></i>Tanggal Lahir Calon Murid
+                            </label>
+                            <input type="date" id="dob-input" 
+                                   class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none text-slate-800 font-medium transition bg-white shadow-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">
+                                <i class="fa-solid fa-building-columns text-blue-600 mr-1.5"></i>Tahun Ajaran Masuk
+                            </label>
+                            <select id="admission-year-input" 
+                                    class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none text-slate-800 font-medium transition bg-white shadow-sm">
+                                <option value="2026">Tahun Ajaran 2026/2027 (Juli 2026)</option>
+                                <option value="2027">Tahun Ajaran 2027/2028 (Juli 2027)</option>
+                                <option value="2025">Tahun Ajaran 2025/2026 (Juli 2025)</option>
+                            </select>
+                        </div>
+
+                        <button onclick="checkEligibility()" 
+                                class="w-full py-4 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl shadow-lg shadow-blue-700/30 transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calculator"></i>
+                            <span>Hitung & Cek Kelayakan</span>
+                        </button>
+                    </div>
+
+                    <!-- Calculation Result Display -->
+                    <div id="result-container" class="bg-white rounded-2xl p-6 border border-slate-200 min-h-[260px] flex flex-col justify-center items-center text-center shadow-sm">
+                        <!-- Default state -->
+                        <div id="state-initial" class="space-y-3 py-6">
+                            <div class="w-16 h-16 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-2xl mx-auto">
+                                <i class="fa-solid fa-cake-candles"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-lg">Masukkan Tanggal Lahir</h4>
+                            <p class="text-xs text-slate-500 max-w-xs">
+                                Sistem akan menghitung usia persis anak per 1 Juli tahun masuk yang dipilih.
+                            </p>
+                        </div>
+
+                        <!-- Result state (Hidden by default) -->
+                        <div id="state-result" class="hidden w-full space-y-4 text-left">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Hasil Analisis Usia</span>
+                                <span id="status-badge" class="px-3 py-1 rounded-full text-xs font-bold"></span>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                                <div class="text-xs text-slate-500">Usia Per 1 Juli <span id="target-july-year">2026</span>:</div>
+                                <div class="text-2xl font-black text-slate-900 mt-1" id="calculated-age-text">-</div>
+                            </div>
+
+                            <div id="message-box" class="p-4 rounded-xl text-xs sm:text-sm font-medium leading-relaxed">
+                            </div>
+
+                            <div class="text-xs text-slate-400 italic text-center pt-2">
+                                *Kriteria acuan: Minimal 6 tahun 0 bulan per bulan Juli.
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: 3 Main Admission Requirements -->
+    <section id="syarat" class="py-16 lg:py-24 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-blue-700 font-bold text-sm tracking-wider uppercase bg-blue-100 px-3 py-1 rounded-full">Ketentuan Umum</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">3 Syarat Utama Pendaftaran SPMB</h2>
+                <p class="text-slate-600 mt-2 text-base">
+                    Pastikan seluruh kriteria di bawah ini terpenuhi sebelum dan selama proses penerimaan calon siswa baru.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Requirement 1 -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-child"></i>
+                        </div>
+                        <div class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-1">Syarat 01</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Minimal Usia 6 Tahun</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Calon peserta didik minimal telah berusia <strong>6 (enam) tahun</strong> terhitung per bulan <strong>Juli tahun masuk</strong> ajaran baru.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100">
+                        <a href="#cek-usia" class="text-blue-700 hover:text-blue-800 text-xs font-bold flex items-center gap-1">
+                            <span>Gunakan Kalkulator Usia</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Requirement 2 -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-file-pen"></i>
+                        </div>
+                        <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">Syarat 02</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Mengisi Formulir Online</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Orang tua/wali wajib melengkapi dan mengunggah data diri serta dokumen calon peserta didik melalui formulir pendaftaran resmi online.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100">
+                        <a href="https://bit.ly/FormulirSPMBMP3" target="_blank" class="text-blue-700 hover:text-blue-800 text-xs font-bold flex items-center gap-1">
+                            <span>Buka Bitly Formulir</span>
+                            <i class="fa-solid fa-external-link text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Requirement 3 -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-users-between-lines"></i>
+                        </div>
+                        <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-1">Syarat 03</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Tahapan Evaluasi & Gali Potensi</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Mengikuti jadwal pelaksanaan <strong>Wawancara Orang Tua</strong> serta sesi <strong>Gali Potensi untuk Anak</strong> sesuai jadwal panitia.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100">
+                        <a href="#tahapan" class="text-blue-700 hover:text-blue-800 text-xs font-bold flex items-center gap-1">
+                            <span>Detail Alur Tahapan</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Checklist Tracker Card -->
+            <div class="mt-12 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md">
+                <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-list-check text-blue-600"></i>
+                    <span>Checklist Mandiri Persiapan SPMB Anda</span>
+                </h3>
+                <div class="grid sm:grid-cols-3 gap-4">
+                    <label class="flex items-center gap-3 p-3.5 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:bg-slate-100 transition">
+                        <input type="checkbox" onchange="updateProgress()" class="chk-item w-5 h-5 rounded text-blue-600 focus:ring-blue-500 border-slate-300">
+                        <span class="text-xs sm:text-sm font-semibold text-slate-700">Usia Anak &ge; 6 Th (Juli)</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 p-3.5 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:bg-slate-100 transition">
+                        <input type="checkbox" onchange="updateProgress()" class="chk-item w-5 h-5 rounded text-blue-600 focus:ring-blue-500 border-slate-300">
+                        <span class="text-xs sm:text-sm font-semibold text-slate-700">Formulir Bitly Terisi</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 p-3.5 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:bg-slate-100 transition">
+                        <input type="checkbox" onchange="updateProgress()" class="chk-item w-5 h-5 rounded text-blue-600 focus:ring-blue-500 border-slate-300">
+                        <span class="text-xs sm:text-sm font-semibold text-slate-700">Siap Wawancara & Gali Potensi</span>
+                    </label>
+                </div>
+
+                <!-- Progress indicator -->
+                <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between gap-4">
+                    <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+                        <div id="progress-bar" class="bg-gradient-to-r from-blue-600 to-emerald-500 h-full w-0 transition-all duration-500"></div>
+                    </div>
+                    <span id="progress-text" class="text-xs font-bold text-slate-600 shrink-0">0% Selesai</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section: Selection Process Timeline -->
+    <section id="tahapan" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-700 font-bold text-sm tracking-wider uppercase bg-emerald-100 px-3 py-1 rounded-full">Alur Pelaksanaan</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Tahapan Pendaftaran & Seleksi</h2>
+                <p class="text-slate-600 mt-2 text-base">
+                    Ikuti langkah-langkah terstruktur berikut mulai dari pendaftaran awal hingga tahap konfirmasi pendaftaran ulang.
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Vertical Line for Timeline (Desktop) -->
+                <div class="hidden md:block absolute left-1/2 -translate-x-1/2 top-8 bottom-8 w-1 bg-slate-200"></div>
+
+                <div class="space-y-12">
+
+                    <!-- Step 1 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="flex-1 w-full md:w-1/2 md:pr-12 text-left md:text-right mb-4 md:mb-0">
+                            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm inline-block w-full">
+                                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Langkah 01</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-2">Pengisian Formulir Online</h3>
+                                <p class="text-xs sm:text-sm text-slate-600 mt-2">
+                                    Orang tua/wali mengisi data lengkap calon peserta didik melalui tautan formulir 
+                                    <a href="https://bit.ly/FormulirSPMBMP3" target="_blank" class="text-blue-600 underline font-semibold">bit.ly/FormulirSPMBMP3</a>.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold z-10 shadow-lg shrink-0 my-2 md:my-0">
+                            1
+                        </div>
+                        <div class="flex-1 w-full md:w-1/2 md:pl-12 hidden md:block"></div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="flex-1 w-full md:w-1/2 md:pr-12 hidden md:block"></div>
+                        <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold z-10 shadow-lg shrink-0 my-2 md:my-0">
+                            2
+                        </div>
+                        <div class="flex-1 w-full md:w-1/2 md:pl-12 text-left mb-4 md:mb-0">
+                            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm inline-block w-full">
+                                <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md">Langkah 02</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-2">Wawancara Orang Tua & Gali Potensi Anak</h3>
+                                <p class="text-xs sm:text-sm text-slate-600 mt-2">
+                                    <strong>Wawancara Orang Tua:</strong> Diskusi keselarasan visi pendampingan belajar.<br>
+                                    <strong>Gali Potensi Anak:</strong> Pemetaan kesiapan tumbuh kembang anak secara ramah dan menyenangkan.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="flex-1 w-full md:w-1/2 md:pr-12 text-left md:text-right mb-4 md:mb-0">
+                            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm inline-block w-full">
+                                <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Langkah 03</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-2">Pengumuman & Registration</h3>
+                                <p class="text-xs sm:text-sm text-slate-600 mt-2">
+                                    Hasil asesmen akan diumumkan sesuai jadwal. Orang tua yang dinyatakan diterima melengkapi administrasi daftar ulang.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold z-10 shadow-lg shrink-0 my-2 md:my-0">
+                            3
+                        </div>
+                        <div class="flex-1 w-full md:w-1/2 md:pl-12 hidden md:block"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section Banner -->
+    <section class="py-16 bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="w-16 h-16 rounded-3xl bg-white/10 text-emerald-400 flex items-center justify-center text-3xl mx-auto mb-6 backdrop-blur-md border border-white/10">
+                <i class="fa-solid fa-paper-plane"></i>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">Siap Mendaftarkan Putra-Putri Anda?</h2>
+            <p class="text-slate-300 text-base max-w-2xl mx-auto mb-8">
+                Klik tombol di bawah ini untuk langsung menuju Formulir Pendaftaran SPMB resmi melalui Google Forms / Bitly.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://bit.ly/FormulirSPMBMP3" target="_blank" rel="noopener noreferrer" 
+                   class="w-full sm:w-auto px-10 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-2xl shadow-xl shadow-emerald-500/30 transition duration-300 text-lg flex items-center justify-center gap-3 transform hover:scale-105">
+                    <span>Buka Formulir Pendaftaran</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                </a>
+
+                <button onclick="copyFormLink()" class="w-full sm:w-auto px-6 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-2xl backdrop-blur-md transition">
+                    <i class="fa-regular fa-copy mr-2"></i>Salin Tautan Bitly
+                </button>
+            </div>
+            
+            <p class="text-xs text-slate-400 mt-6">
+                Direct Link: <span class="font-mono text-slate-300">https://bit.ly/FormulirSPMBMP3</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 lg:py-24 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-sky-600 font-bold text-sm tracking-wider uppercase bg-sky-100 px-3 py-1 rounded-full">Tanya Jawab</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-3">Pertanyaan Sering Diajukan (FAQ)</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-bold text-slate-800 flex justify-between items-center hover:bg-slate-50">
+                        <span>Bagaimana jika anak belum genap 6 tahun di bulan Juli?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="px-6 py-4 border-t border-slate-100 text-slate-600 text-xs sm:text-sm hidden leading-relaxed">
+                        Sesuai kriteria umum SPMB, usia minimal yang dipersyaratkan adalah 6 tahun per bulan Juli tahun ajaran masuk. Apabila ada kondisi khusus atau rekomendasi ahli psikologi tumbuh kembang, Anda dapat mengkonsultasikannya saat pengisian form atau ke panitia.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-bold text-slate-800 flex justify-between items-center hover:bg-slate-50">
+                        <span>Apa saja yang disiapkan untuk tes "Gali Potensi Anak"?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="px-6 py-4 border-t border-slate-100 text-slate-600 text-xs sm:text-sm hidden leading-relaxed">
+                        Sesi Gali Potensi Anak bersifat ramah anak (child-friendly) dan bukan berupa tes akademis yang menegangkan. Anak akan diajak berinteraksi, bermain peran, motorik halus/kasar, serta pengamatan kesiapan sosial emosional.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-bold text-slate-800 flex justify-between items-center hover:bg-slate-50">
+                        <span>Apa fokus materi dalam Wawancara Orang Tua?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="px-6 py-4 border-t border-slate-100 text-slate-600 text-xs sm:text-sm hidden leading-relaxed">
+                        Wawancara orang tua bertujuan untuk menyelaraskan persepsi antara pola pengasuhan di rumah dan program pendidikan di sekolah, komitmen pendampingan anak, serta pemahaman teknis sekolah.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification Element -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 z-50 text-xs sm:text-sm font-semibold border border-slate-700">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toast-message">Tautan berhasil disalin!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div>
+                <div class="text-white font-bold text-lg mb-1">SPMB Interaktif</div>
+                <p class="text-xs text-slate-500">Sistem Informasi & Acceptance Portal Murid Baru</p>
+            </div>
+            <div class="text-xs text-slate-500">
+                &copy; SPMB. Formulir Resmi: <a href="https://bit.ly/FormulirSPMBMP3" target="_blank" class="text-sky-400 hover:underline">bit.ly/FormulirSPMBMP3</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Mobile Navigation Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Copy Link Functionality using document.execCommand('copy')
+        function copyFormLink() {
+            const linkText = "https://bit.ly/FormulirSPMBMP3";
+            const tempInput = document.createElement("input");
+            tempInput.value = linkText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            
+            try {
+                document.execCommand("copy");
+                showToast("Link Bitly pendaftaran berhasil disalin ke clipboard!");
+            } catch (err) {
+                showToast("Gagal menyalin link. Gunakan klik langsung.");
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        // Custom Toast Notification
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            const toastMessage = document.getElementById("toast-message");
+            toastMessage.innerText = message;
+            toast.classList.remove("translate-y-24", "opacity-0");
+            
+            setTimeout(() => {
+                toast.classList.add("translate-y-24", "opacity-0");
+            }, 3500);
+        }
+
+        // Age Eligibility Calculator Logic
+        function checkEligibility() {
+            const dobValue = document.getElementById('dob-input').value;
+            const admissionYear = parseInt(document.getElementById('admission-year-input').value);
+
+            const initialBox = document.getElementById('state-initial');
+            const resultBox = document.getElementById('state-result');
+            
+            if (!dobValue) {
+                showToast("Silakan masukkan tanggal lahir calon murid terlebih dahulu!");
+                return;
+            }
+
+            const dob = new Date(dobValue);
+            // Target cutoff date: July 1st of the selected admission year
+            const targetCutoff = new Date(admissionYear, 6, 1); // Month 6 = July (0-indexed)
+
+            // Age Calculation
+            let ageYears = targetCutoff.getFullYear() - dob.getFullYear();
+            let ageMonths = targetCutoff.getMonth() - dob.getMonth();
+            let ageDays = targetCutoff.getDate() - dob.getDate();
+
+            if (ageDays < 0) {
+                ageMonths--;
+                // Days in previous month
+                const prevMonth = new Date(targetCutoff.getFullYear(), targetCutoff.getMonth(), 0);
+                ageDays += prevMonth.getDate();
+            }
+
+            if (ageMonths < 0) {
+                ageYears--;
+                ageMonths += 12;
+            }
+
+            // Update UI Elements
+            initialBox.classList.add('hidden');
+            resultBox.classList.remove('hidden');
+
+            document.getElementById('target-july-year').innerText = admissionYear;
+            document.getElementById('calculated-age-text').innerText = `${ageYears} Tahun ${ageMonths} Bulan ${ageDays} Hari`;
+
+            const badge = document.getElementById('status-badge');
+            const messageBox = document.getElementById('message-box');
+
+            if (ageYears >= 6) {
+                // ELIGIBLE (>= 6 years)
+                badge.className = "px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-200";
+                badge.innerText = "MEMENUHI SYARAT";
+
+                messageBox.className = "p-4 rounded-xl text-xs sm:text-sm font-medium leading-relaxed bg-emerald-50 text-emerald-900 border border-emerald-200";
+                messageBox.innerHTML = `
+                    <div class="flex items-start gap-2">
+                        <i class="fa-solid fa-circle-check text-emerald-600 text-base mt-0.5"></i>
+                        <div>
+                            <strong>Selamat! Usia calon murid telah memenuhi syarat minimal 6 tahun.</strong><br>
+                            Silakan melangkah ke tahap selanjutnya yaitu pengisian formulir online melalui tombol pendaftaran.
+                        </div>
+                    </div>
+                `;
+            } else {
+                // NOT ELIGIBLE (< 6 years)
+                badge.className = "px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200";
+                badge.innerText = "BELUM CUKUP USIA";
+
+                messageBox.className = "p-4 rounded-xl text-xs sm:text-sm font-medium leading-relaxed bg-amber-50 text-amber-900 border border-amber-200";
+                messageBox.innerHTML = `
+                    <div class="flex items-start gap-2">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-600 text-base mt-0.5"></i>
+                        <div>
+                            <strong>Usia calon murid kurang dari 6 tahun per Juli ${admissionYear}.</strong><br>
+                            Kurang sekitar <strong>${6 - ageYears - 1 > 0 ? (6 - ageYears - 1) + ' tahun ' : ''}${12 - ageMonths} bulan</strong> lagi untuk mencapai usia 6 tahun. Konsultasikan dengan tim penerimaan jika ada pertimbangan khusus.
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Interactive Progress Bar Checklist
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.chk-item');
+            let checkedCount = 0;
+            checkboxes.forEach(chk => {
+                if (chk.checked) checkedCount++;
+            });
+
+            const percentage = Math.round((checkedCount / checkboxes.length) * 100);
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+
+            progressBar.style.width = percentage + '%';
+            progressText.innerText = percentage + '% Selesai';
+        }
+
+        // Toggle Accordion FAQ
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+    </script>
+</body>
+</html>
